@@ -23,7 +23,7 @@ body {
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
-    font-variation-settings: "wdth" 100;
+    font-variation-settings: 100;
     background-image: url("../../image/bg-image.jpg");
     background-size: cover;
     background-position: center;
@@ -105,12 +105,145 @@ body {
 }
 
 
-/* ------- ||COMING SOON -------*/
-main {
+/* ------- ||HEAD TEXT ------- */
+.h-size {
+    font-size: 2.4rem;
+}
+
+.w-800 {
+    font-weight: 800;
+}
+
+.line-h {
+    line-height: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.h3-size {
+    font-size: 1.4rem;
+}
+
+.h3-color {
+    color: rgb(189, 189, 189);
+    font-weight: inherit;
+}
+
+
+/* ------- ||FORM LOGIN ------- */
+.form-center {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 2rem;
+}
+
+.form-bg {
+    background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(217, 165, 238, 0.4);
+    color: white;
+}
+
+.form-size {
+    width: 30%;
+    padding: 2rem;
+    border-radius: 20px;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.m-height {
+    min-height: 40px;
+}
+
+.group {
+   display: flex;
+   flex-direction: column; 
+}
+
+
+/* ------- customize input -------*/
+label {
+    font-size: 1.4rem;
+}
+
+.frame {
+    border: 2px solid gray;
+}
+
+.group-top {
+    margin-top: 1rem;
+}
+
+.input-font {
+    font-size: 1.5rem;
+}
+
+input:focus {
+    border: 3px solid var(--color-secondary);
+    outline: none;
+}
+
+.border-corner {
+    border-radius: 6px;
+}
+
+.space {
+    text-indent: 1.15rem;
+}
+
+
+/* ------- button login ------- */
+.m-top {
+    margin-top: 2rem;
+}
+
+.text-center {
     text-align: center;
-    height: 70vh;
-    font-size: 2rem;
+}
+
+.flex-button {
+    display: flex;
+    flex-direction: column;
+}
+
+.a-color {
+    text-decoration: none;
+    color: white;
+}
+
+.hv-link:hover {
+    color: rgb(209, 209, 209);
+}
+
+.button-bg {
+    background-color: var(--color-tertiary);
+}
+
+.button-color {
+    color: white;
+}
+
+.bt-frame {
+    border: 2px solid var(--color-tertiary);
+    border-radius: 12px;
+    font-size: 1.7rem;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+
+/* ------- button signin -------*/
+.f-size {
+    font-size: 1.4rem;
+    padding-top: 1rem;
+}
+
+.m-link {
+    margin-top: 1rem;
 }
