@@ -247,3 +247,41 @@ input:focus {
 .m-link {
     margin-top: 1rem;
 }
+
+
+/* ------- ||RESPON -------*/
+/*------- mobile -------*/
+@media (max-width: 576px) {
+
+    /* ||MENU */
+    .respon {
+        display: none;
+    }
+
+    .max-w {
+        width: 90%;
+    }
+
+    .menu-size {
+        font-size: 1.8rem;
+    }
+
+    /* ||FORM LOGIN */
+    .form-size {
+        width: 90%;
+    }
+}
+
+/* ------- tablet -------*/
+@media (min-width: 601px) and (max-width: 1024px) {
+    
+    /* ||MENU */
+    .max-w {
+        width: 90%;
+    }
+
+    /* ||FORM LOGIN */
+    .form-size {
+        width: 45%;
+    }
+}
