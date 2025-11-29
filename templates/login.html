@@ -5,8 +5,8 @@
         <meta charset="UTF-8">
         <meta name="robots" content="index, follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" href="../../image/logo.png" type="image/png">
-        <link rel="stylesheet" href="login.css" type="text/css">
+        <link rel="icon" href="static/image/logo.png" type="image/png">
+        <link rel="stylesheet" href="static/login.css" type="text/css">
 
         <title>Miyu store</title>
     </head>
@@ -17,7 +17,7 @@
         <header>
             <nav class="w-full">
                 <div class="flex max-w mt-4 mx-auto">
-                    <a href="/"><img class="text-white max-w2" src="../../image/logo.png" alt="icon shop" loading="eager"></a>
+                    <a href="/"><img class="text-white max-w2" src="static/image/logo.png" alt="icon shop" loading="eager"></a>
                     <ul class="flex ft-size items-center">
                         <li class="px-1 py-1 respon"><a class="decoration hv-color" href="/">หน้าแรก</a></li>
                         <li class="px-1 py-1 menu-size"><a class="decoration hv-color" href="/src/code.html/login/login.html">เข้าสู่ระบบ</a></li>
@@ -36,7 +36,7 @@
                         <h3 class="line-h h3-size h3-color">เข้าสู่ระบบ เพื่อเลือกซื้อสินค้าและใช้บริการ !</h3>
                     </div>
 
-                    <form action="https://httpbin.org/get" method="post">
+                    <form action="{{ url_for('login') }}" method="POST">
                         <div class="group">
                             <label for="username">ชื่อผู้ใช้ / Username</label>
                             <input class="w-full m-height border-corner space frame input-font" type="text" name="username" id="username" placeholder="Somsuk" autocomplete="on" required>

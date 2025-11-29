@@ -24,7 +24,7 @@ body {
     font-weight: 500;
     font-style: normal;
     font-variation-settings: "wdth" 100;
-    background-image: url("../image/bg-image.jpg");
+    background-image: url("../static/image/bg-image.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -208,6 +208,7 @@ body {
 }
 
 .pd-bt {
+    width: 100%;
     padding: 0.35rem;
 }
 

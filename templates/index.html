@@ -5,8 +5,8 @@
         <meta charset="UTF-8">
         <meta name="robots" content="index, follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" href="src/image/logo.png" type="image/png">
-        <link rel="stylesheet" href="src/code.css/style.css" type="text/css">
+        <link rel="icon" href="static/image/logo.png" type="image/png">
+        <link rel="stylesheet" href="static/style.css" type="text/css">
 
 
         <title>Miyu store</title>
@@ -18,10 +18,16 @@
         <header>
             <nav class="w-full">
                 <div class="flex max-w mt-4 mx-auto">
-                    <a href="/"><img class="text-white max-w2" src="src/image/logo.png" alt="icon shop" loading="eager"></a>
+                    <a href="/"><img class="text-white max-w2" src="static/image/logo.png" alt="icon shop" loading="eager"></a>
                     <ul class="flex ft-size items-center">
                         <li class="px-1 py-1 respon"><a class="decoration hv-color" href="/">หน้าแรก</a></li>
-                        <li class="px-1 py-1 menu-size"><a class="decoration hv-color" href="/src/code.html/login/login.html">เข้าสู่ระบบ</a></li>
+                        <li class="px-1 py-1 menu-size">
+                            {% if session.get('user_id') %}
+                                <a class="decoration hv-color" href="{{ url_for('logout') }}">ออกจากระบบ</a>
+                            {% else %}
+                                <a class="decoration hv-color" href="{{ url_for('login') }}">เข้าสู่ระบบ</a>
+                            {% endif %}
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -32,7 +38,7 @@
         <main>
             <div class="main-content">
                 <div>
-                    <img class="banner" src="src/image/banner.png" alt="banner" loading="eager">
+                    <img class="banner" src="static/image/banner.png" alt="banner" loading="eager">
                 </div>
                 
                 <div class="flex-center">
@@ -41,7 +47,7 @@
                         <div class="bg-product w-product border-product">
                             <figure class="padding-content">
                                 <div class="flex-img">
-                                    <img class="border w-img" src="src/image-giftcard/gift-crown.png" alt="Majestic Gingerbread Crown" loading="eager">
+                                    <img class="border w-img" src="static/image-giftcard/gift-crown.png" alt="Majestic Gingerbread Crown" loading="eager">
                                 </div>
                                 
                                 <div class="grid-2 text-size text-padding">
@@ -49,7 +55,9 @@
                                         <figcaption class="w-600">บัตรเติม ROBUX 800R</figcaption>
                                         <p class="p-color w-600">399 บาท</p>
                                     </div>
-                                    <button class="w-full border-half pd-bt mgt-bt color-bt">ซื้อสินค้า</button>
+                                    <form action="{{ url_for('buy', product_id=1) }}" method="get">
+                                        <button type="submit" class="w-full border-half pd-bt mgt-bt color-bt">ซื้อสินค้า</button>
+                                    </form>
                                 </div>
                             </figure>
                         </div>
@@ -58,7 +66,7 @@
                         <div class="bg-product w-product border-product">
                             <figure class="padding-content">
                                 <div class="flex-img">
-                                    <img class="border w-img" src="src/image-giftcard/gift-sammy.png" alt="Sammy the Sightseeing Sasquatch" loading="eager">
+                                    <img class="border w-img" src="static/image-giftcard/gift-sammy.png" alt="Sammy the Sightseeing Sasquatch" loading="eager">
                                 </div>
                                 
                                 <div class="grid-2 text-size text-padding">
@@ -66,7 +74,9 @@
                                         <figcaption class="w-600">บัตรเติม ROBUX 800R</figcaption>
                                         <p class="p-color w-600">399 บาท</p>
                                     </div>
-                                    <button class="w-full border-half pd-bt mgt-bt color-bt">ซื้อสินค้า</button>
+                                    <form action="{{ url_for('buy', product_id=1) }}" method="get">
+                                        <button type="submit" class="w-full border-half pd-bt mgt-bt color-bt">ซื้อสินค้า</button>
+                                    </form>
                                 </div>
                             </figure>
                         </div>
@@ -75,7 +85,7 @@
                         <div class="bg-product w-product border-product">
                             <figure class="padding-content">
                                 <div class="flex-img">
-                                    <img class="border w-img" src="src/image-giftcard/gift-sword.png" alt="Eternal Stellar Sword" loading="eager">
+                                    <img class="border w-img" src="static/image-giftcard/gift-sword.png" alt="Eternal Stellar Sword" loading="eager">
                                 </div>
                                 
                                 <div class="grid-2 text-size text-padding">
@@ -83,7 +93,9 @@
                                         <figcaption class="w-600">บัตรเติม ROBUX 800R</figcaption>
                                         <p class="p-color w-600">399 บาท</p>
                                     </div>
-                                    <button class="w-full border-half pd-bt mgt-bt color-bt">ซื้อสินค้า</button>
+                                    <form action="{{ url_for('buy', product_id=1) }}" method="get">
+                                        <button type="submit" class="w-full border-half pd-bt mgt-bt color-bt">ซื้อสินค้า</button>
+                                    </form>
                                 </div>
                             </figure>
                         </div>
@@ -92,7 +104,7 @@
                         <div class="bg-product w-product border-product">
                             <figure class="padding-content">
                                 <div class="flex-img">
-                                    <img class="border w-img" src="src/image-giftcard/gift-wizard.png" alt="Fungal Foreseer Wizard Hat" loading="eager">
+                                    <img class="border w-img" src="static/image-giftcard/gift-wizard.png" alt="Fungal Foreseer Wizard Hat" loading="eager">
                                 </div>
                                 
                                 <div class="grid-2 text-size text-padding">
@@ -100,7 +112,9 @@
                                         <figcaption class="w-600">บัตรเติม ROBUX 800R</figcaption>
                                         <p class="p-color w-600">399 บาท</p>
                                     </div>
-                                    <button class="w-full border-half pd-bt mgt-bt color-bt">ซื้อสินค้า</button>
+                                    <form action="{{ url_for('buy', product_id=1) }}" method="get">
+                                        <button type="submit" class="w-full border-half pd-bt mgt-bt color-bt">ซื้อสินค้า</button>
+                                    </form>
                                 </div>
                             </figure>
                         </div>
@@ -109,7 +123,7 @@
                         <div class="bg-product w-product border-product">
                             <figure class="padding-content">
                                 <div class="flex-img">
-                                    <img class="border w-img" src="src/image-giftcard/gift-strawberry.png" alt="Manic Strawberry Head" loading="eager">
+                                    <img class="border w-img" src="static/image-giftcard/gift-strawberry.png" alt="Manic Strawberry Head" loading="eager">
                                 </div>
                                 
                                 <div class="grid-2 text-size text-padding">
@@ -117,7 +131,9 @@
                                         <figcaption class="w-600">บัตรเติม ROBUX 800R</figcaption>
                                         <p class="p-color w-600">399 บาท</p>
                                     </div>
-                                    <button class="w-full border-half pd-bt mgt-bt color-bt">ซื้อสินค้า</button>
+                                    <form action="{{ url_for('buy', product_id=1) }}" method="get">
+                                        <button type="submit" class="w-full border-half pd-bt mgt-bt color-bt">ซื้อสินค้า</button>
+                                    </form>
                                 </div>
                             </figure>
                         </div>
@@ -126,7 +142,7 @@
                         <div class="bg-product w-product border-product">
                             <figure class="padding-content">
                                 <div class="flex-img">
-                                    <img class="border w-img" src="src/image-giftcard/gift-neko.png" alt="Cyber Neko Headgear" loading="eager">
+                                    <img class="border w-img" src="static/image-giftcard/gift-neko.png" alt="Cyber Neko Headgear" loading="eager">
                                 </div>
 
                                 <div class="grid-2 text-size text-padding">
@@ -134,7 +150,9 @@
                                         <figcaption class="w-600">บัตรเติม ROBUX 800R</figcaption>
                                         <p class="p-color w-600">399 บาท</p>
                                     </div>
-                                    <button class="w-full border-half pd-bt mgt-bt color-bt">ซื้อสินค้า</button>
+                                    <form action="{{ url_for('buy', product_id=1) }}" method="get">
+                                        <button type="submit" class="w-full border-half pd-bt mgt-bt color-bt">ซื้อสินค้า</button>
+                                    </form>
                                 </div>
                             </figure>
                         </div>
@@ -143,7 +161,7 @@
                         <div class="bg-product w-product border-product">
                             <figure class="padding-content">
                                 <div class="flex-img">
-                                    <img class="border w-img" src="src/image-giftcard/gift-monocle.png" alt="Fancy Top Hat and Monocle" loading="eager">
+                                    <img class="border w-img" src="static/image-giftcard/gift-monocle.png" alt="Fancy Top Hat and Monocle" loading="eager">
                                 </div>
                                 
                                     <div class="grid-2 text-size text-padding">
@@ -151,7 +169,9 @@
                                         <figcaption class="w-600">บัตรเติม ROBUX 800R</figcaption>
                                         <p class="p-color w-600">399 บาท</p>
                                     </div>
-                                    <button class="w-full border-half pd-bt mgt-bt color-bt">ซื้อสินค้า</button>
+                                    <form action="{{ url_for('buy', product_id=1) }}" method="get">
+                                        <button type="submit" class="w-full border-half pd-bt mgt-bt color-bt">ซื้อสินค้า</button>
+                                    </form>
                                 </div>
                             </figure>
                         </div>
@@ -160,7 +180,7 @@
                         <div class="bg-product w-product border-product">
                             <figure class="padding-content">
                                 <div class="flex-img">
-                                    <img class="border w-img" src="src/image-giftcard/gift-mohawk.png" alt="Post-Apocalyptic Mohawk" loading="eager">
+                                    <img class="border w-img" src="static/image-giftcard/gift-mohawk.png" alt="Post-Apocalyptic Mohawk" loading="eager">
                                 </div>
                                 
                                 <div class="grid-2 text-size text-padding">
@@ -168,7 +188,9 @@
                                         <figcaption class="w-600">บัตรเติม ROBUX 800R</figcaption>
                                         <p class="p-color w-600">399 บาท</p>
                                     </div>
-                                    <button class="w-full border-half pd-bt mgt-bt color-bt">ซื้อสินค้า</button>
+                                    <form action="{{ url_for('buy', product_id=1) }}" method="get">
+                                        <button type="submit" class="w-full border-half pd-bt mgt-bt color-bt">ซื้อสินค้า</button>
+                                    </form>
                                 </div>
                             </figure>
                         </div>
