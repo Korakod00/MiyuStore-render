@@ -91,16 +91,19 @@ def register():
 
     return render_template('register.html')
 
+
 # ROUTE INDEX
+@app.route("/")
+def root():
+    return redirect(url_for("index"))
 
 
 @app.route('/index')
 def index():
     return render_template('index.html', username=session.get('username'))
 
+
 # ROUTE BUY
-
-
 @app.route('/buy/<int:product_id>')
 def buy(product_id):
     if 'user_id' not in session:
