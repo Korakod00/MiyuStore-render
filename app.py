@@ -2,15 +2,14 @@ from flask import Flask, render_template, request, redirect, url_for, session, f
 import psycopg2
 import psycopg2.extras
 from werkzeug.security import generate_password_hash, check_password_hash
+import os
 
 app = Flask(__name__)
-app.secret_key = 'maibokloknajajubjub123091'
+app.secret_key = os.environ.get('SECRET_KEY')
 
 
 def get_db():
-    conn = psycopg2.connect(
-        "postgresql://neondb_owner:npg_osw5z1YBICvN@ep-still-wave-a1nuin19-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
-    )
+    conn = psycopg2.connect(os.environ.get('DATABASE_URL'))
     return conn
 
 # ROUTE LOGIN
