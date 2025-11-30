@@ -4,17 +4,21 @@ import psycopg2.extras
 from werkzeug.security import generate_password_hash, check_password_hash
 import os
 
+
 app = Flask(__name__)
-app.secret_key = os.environ.get('SECRET_KEY')
+app.secret_key = os.environ.get('SECRET_KEY', 'maibokloknajajubjub123091')
 
 
 def get_db():
-    conn = psycopg2.connect(os.environ.get('DATABASE_URL'))
+    DATABASE_URL = os.environ.get(
+        'DATABASE_URL', 'postgresql://neondb_owner:รหัสผ่าน@ep-still-wave-a1nuin19-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require')
+    if not DATABASE_URL:
+        raise ValueError("DATABASE_URL environment variable not set!")
+    conn = psycopg2.connect(DATABASE_URL)
     return conn
 
+
 # ROUTE LOGIN
-
-
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == "POST":
