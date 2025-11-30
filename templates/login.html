@@ -36,6 +36,15 @@
                         <h3 class="line-h h3-size h3-color">เข้าสู่ระบบ เพื่อเลือกซื้อสินค้าและใช้บริการ !</h3>
                     </div>
 
+                    <!-- FLASH MESSAGES -->
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            {% for category, message in messages %}
+                            <div class="alert alert-{{ category }}">{{ message }}</div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+
                     <form action="{{ url_for('login') }}" method="POST">
                         <div class="group">
                             <label for="username">ชื่อผู้ใช้ / Username</label>
@@ -52,7 +61,7 @@
                         </div>
                         
                         <div class="text-center m-link">
-                            <a class="decoration hv-link f-size m-top" href="../registor/registor.html">สมัครสมาชิก</a>
+                            <a class="decoration hv-link f-size m-top" href="templates/registor.html">สมัครสมาชิก</a>
                         </div>
                     </form>
                 </div>
